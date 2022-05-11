@@ -9,10 +9,12 @@ public class BishopBlack implements Figure {
     public BishopBlack(final Cell ps) {
         position = ps;
     }
+
     @Override
     public Cell position() {
         return position;
     }
+
     @Override
     public Cell[] way(Cell dest) {
         if (!isDiagonal(position, dest)) {
@@ -22,8 +24,8 @@ public class BishopBlack implements Figure {
         }
         int size = Math.abs(position.getX() - dest.getX());
         Cell[] steps = new Cell[size];
-        int deltaX = (position.getX() - dest.getX()) / - size;
-        int deltaY = (position.getY() - dest.getY()) / - size;
+        int deltaX = (position.getX() - dest.getX()) / -size;
+        int deltaY = (position.getY() - dest.getY()) / -size;
         int x = position.getX() + deltaX;
         int y = position.getY() + deltaY;
         for (int index = 0; index < size; index++) {
@@ -33,9 +35,11 @@ public class BishopBlack implements Figure {
         }
         return steps;
     }
+
     public boolean isDiagonal(Cell source, Cell dest) {
         return Math.abs(source.getX() - dest.getX()) == Math.abs(source.getY() - dest.getY());
     }
+
     @Override
     public Figure copy(Cell dest) {
         return new BishopBlack(dest);
