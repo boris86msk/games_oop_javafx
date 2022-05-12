@@ -42,22 +42,10 @@ public class BishopBlackTest {
         assertThat(expected, is(way));
     }
 
-    @Test(expected = FigureNotFoundException.class)
-    public void whenFigureNotFoundException() {
-        Figure bishop = new BishopBlack(Cell.H3);
-        Cell[] way = bishop.way(Cell.C7);
-    }
-
     @Test(expected = ImpossibleMoveException.class)
     public void whenImpossibleMoveException() {
         Figure bishop = new BishopBlack(Cell.H3);
         Cell[] way = bishop.way(Cell.C7);
     }
 
-    @Test(expected = OccupiedCellException.class)
-    public void whenOccupiedCellException() {
-        Figure bishop = new BishopBlack(Cell.F8);
-        Figure pawnBlack = new PawnBlack(Cell.H6);
-        Cell[] way = bishop.way(Cell.H6);
-    }
 }
