@@ -50,7 +50,8 @@ public class BishopBlackTest {
     }
 
     @Test(expected = FigureNotFoundException.class)
-    public void whenFigureNotFoundException() throws OccupiedCellException, FigureNotFoundException {
+    public void whenFigureNotFoundException() throws OccupiedCellException,
+            FigureNotFoundException {
         Logic logic = new Logic();
         logic.move(Cell.F8, Cell.H6);
     }
